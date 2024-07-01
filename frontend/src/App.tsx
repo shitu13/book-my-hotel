@@ -1,11 +1,14 @@
-import {BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
-import { useAppContext } from "./contexts/AppContext";
-
-// imported pages
-import Layout from './layouts/Layout'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Layout from "./layouts/Layout";
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
 import AddHotel from "./pages/AddHotel";
+import { useAppContext } from "./contexts/AppContext";
 import MyHotels from "./pages/MyHotels";
 import EditHotel from "./pages/EditHotel";
 import Search from "./pages/Search";
@@ -14,12 +17,9 @@ import Booking from "./pages/Booking";
 import MyBookings from "./pages/MyBookings";
 import Home from "./pages/Home";
 
-
-
-function App() {
-  const {isLoggedIn} = useAppContext();
-
-   return (
+const App = () => {
+  const { isLoggedIn } = useAppContext();
+  return (
     <Router>
       <Routes>
         <Route
@@ -112,6 +112,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
-export default App
+export default App;
